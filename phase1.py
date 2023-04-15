@@ -1,25 +1,22 @@
-
 import os
-import rpgfunc
+import dialogues
 import combat
-
-
 
 
 def call(user_name):
     os.system('cls')
-    rpgfunc.header
+    dialogues.header
     print("_" * 44)
-    rpgfunc.grabbed_phone()
+    dialogues.grabbed_phone()
     
     while True:
         os.system('cls')
-        rpgfunc.header()
+        dialogues.header()
         print("_" * 44)
         user_input = input("What would you do?\n[1] Call Alfred\n[2] Look for another way\n\n---> Enter: ")
         
         if user_input == '1':
-            rpgfunc.called_alf(user_name)
+            dialogues.called_alf(user_name)
             break
 
         elif user_input == '2':
@@ -28,15 +25,12 @@ def call(user_name):
         else:
             print("Invalid Input")
             continue
-    
-    
-    
-    
+
 
 def first_fight():
     while True:
         os.system('cls')
-        rpgfunc.header()
+        dialogues.header()
         user_choice = input("What would you do?\n[1] Fight him\n[2] Try to escape\n\n---> Enter: ")
         if user_choice == '1':
             flag = True
@@ -46,7 +40,7 @@ def first_fight():
             break
         elif user_choice == '2':
             os.system('cls')
-            rpgfunc.header()
+            dialogues.header()
             print("You tried to run, but the big guy stepped in your way")
             input("\n\nPress Enter to conitnue...")
             continue
@@ -55,26 +49,25 @@ def first_fight():
 
 
 
-
 def go_out(stats):
     x = 1
     while True:
         os.system('cls')
-        rpgfunc.header()
+        dialogues.header()
         combat.print_user_stats()
         
         user_input = input("What would you do:\n[1] Move\n[2] Rest\n\nEnter: ")
         if user_input == '1':
             if x == 1:
                 os.system('cls')
-                rpgfunc.header()
+                dialogues.header()
                 combat.print_user_stats()
                 print('You walked through the corridor, nothing happened...')
                 input("\n\nPress Enter to continue...")
                 x += 1
             elif x == 2:
                 os.system('cls')
-                rpgfunc.header()
+                dialogues.header()
                 combat.print_user_stats()
                 print("You walked through the corridor, and reached an exit")
                 input("\n\nPress Enter to continue...")
@@ -91,11 +84,11 @@ def go_out(stats):
 def reached_exit(stats):
     while True:
         os.system('cls')
-        rpgfunc.header()
+        dialogues.header()
         combat.print_user_stats()
         user_input = input("What would you do?\n[1] Exit Building\n[2] Rest\n\nEnter: ")
         if user_input == '1':
-            rpgfunc.phase1_conclusion()
+            dialogues.phase1_conclusion()
             break
         elif user_input == '2':
             resting(stats)
@@ -105,7 +98,7 @@ def reached_exit(stats):
 
 def resting(stats):
     os.system('cls')
-    rpgfunc.header()
+    dialogues.header()
     y = stats["Health"] + 10
     if y < 100:
         stats["Health"] = y
@@ -124,4 +117,3 @@ def resting(stats):
         combat.print_user_stats()
         print("You rested a little\nYour hp is max now")
         input("\n\nPress Enter to continue...")
-

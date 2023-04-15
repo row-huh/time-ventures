@@ -2,7 +2,6 @@ import os
 import time
 
 
-
 def header():
     print('-' * 88)
     print('>>>|  ' + ' '.join("TIME VENTURERS") + '  |<<< ')
@@ -71,6 +70,7 @@ def called_alf(user_name):
     "Alfred: Wait...\nAlfred: Could it be...",
     ("Alfred: Are you "+ user_name + "?\nAlfred: This is " + user_name + ", right? You're from the year 2023?"),
     user_name + ": How do you know who I am?",
+    
     "Alfred: ..So...It is you...\nAlfred: ..My experiment...It was a success!",
     user_name + ": What?",
     "Alfred: Look, I don\'t have time to explain everything\nAlfred: All I can tell you is that I summoned you from the past...This is year 2094",

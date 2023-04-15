@@ -1,14 +1,11 @@
 import os
-import rpgfunc
-import phase1_choices
+import dialogues
+import phase1
 
-# main menu
 def main():
     while True:
-        
         os.system('cls')
-        rpgfunc.header()
-        #print("_"*40 + '\n')
+        dialogues.header()
         main_choice = input("Enter the corresponding number to:\n[1] Play\n[2] Credits\n[X] Exit\n\n-----> ").lower()
         
         if main_choice == '1':
@@ -16,7 +13,7 @@ def main():
             continue
             
         elif main_choice == '2':
-            rpgfunc.credits()
+            dialogues.credits()
             continue
         
         elif main_choice == 'x':
@@ -31,7 +28,7 @@ def main():
 def play_menu():
     while True:
         os.system('cls')
-        rpgfunc.header()
+        dialogues.header()
         global user_name
         user_name = input("Enter your name: ").title()
 
@@ -44,29 +41,29 @@ def play_menu():
 
 
 def phase_1(user_name):
-    rpgfunc.start_dialogues()    
+    dialogues.start_dialogues()    
     while True:
         os.system('cls')
-        rpgfunc.header()
+        dialogues.header()
         print("_" * 44)
         user_choice = input("What would you do\n[1] Scream for help\n[2] look in the room for clues\n[3] Grab your phone to try to call for help\n\n---> Enter: ")
         
         if user_choice == "1":
-            rpgfunc.screamed_for_help()
+            dialogues.screamed_for_help()
             continue
         elif user_choice == "2":
-            rpgfunc.looking_for_clues()
+            dialogues.looking_for_clues()
             continue
         elif user_choice == "3":
-            if phase1_choices.call(user_name) == False:
+            if phase1.call(user_name) == False:
                 continue
-            # a = phase1_choices.call(user_name)
-            rpgfunc.big_guy_incoming()
-            phase1_choices.first_fight()
-            rpgfunc.end()
+            # a = phase1.call(user_name)
+            dialogues.big_guy_incoming()
+            phase1.first_fight()
+            dialogues.end()
             print("-----> Thank You, " + user_name + " for Playing! ")
             input('\n\nPress Enter to continue...')
-            rpgfunc.credits()
+            dialogues.credits()
             break
         else:
             print("Invalid input")

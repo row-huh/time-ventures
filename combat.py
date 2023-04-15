@@ -1,7 +1,6 @@
-
 import os
 import random
-import rpgfunc
+import dialogues
 
 
 stats = {
@@ -20,7 +19,7 @@ enemy_stats = {
 
 def print_user_stats():
     os.system('cls')
-    rpgfunc.header()
+    dialogues.header()
     print(' '.join('STATS'))
     print("*" * 44)
     print('Player')
@@ -32,7 +31,7 @@ def print_user_stats():
     
 def print_stats():
     os.system('cls')
-    rpgfunc.header()
+    dialogues.header()
     print(' '.join('STATS'))
     print("*" * 88)
     
@@ -68,7 +67,7 @@ def enemy_hit():
 def dmg_dealt():
     dmg = random.choice([25, 50, 75, 0])
     os.system('cls')
-    rpgfunc.header()
+    dialogues.header()
     enemy_stats["Health"] -= int(dmg)
     print_stats()
 
@@ -84,7 +83,7 @@ def dmg_dealt():
 def dodge():
     
     os.system('cls')
-    rpgfunc.header()
+    dialogues.header()
     print_stats()
     rand = random.choice([1, 2]) #One for succesfuly dodging, two for getting hit anyway
     
@@ -108,7 +107,7 @@ def win_or_no():
         bool_value = False
     
     os.system('cls')
-    rpgfunc.header()
+    dialogues.header()
     print_stats()
     if bool_value == True: # true means you defeated enemy
         print("You succesfuly defeated the enemy")
@@ -132,13 +131,13 @@ def win_or_no():
 def rng_drops():
     rand = random.choice(['Food', 'Nothing'])
     os.system('cls')
-    rpgfunc.header()
+    dialogues.header()
     print_user_stats()
     print("The enemy dropped:", rand)
     input("\n\nPress Enter to continue...")
 def skill():
     os.system('cls')
-    rpgfunc.header()
+    dialogues.header()
     print_stats()
     if stats["Skills"] == "None":
         print(">>> You do not have any skills unlocked right now")
@@ -157,7 +156,7 @@ def fight():
     a = True
     while True:
         os.system('cls')
-        rpgfunc.header()
+        dialogues.header()
         print_stats()
         print(">>| What would you do\n[1] Attack\n[2] Dodge\n[3] Use skill")
         user_choice = input("\n\nEnter: ")
