@@ -4,6 +4,7 @@ import phase1
 import time
 import re
 
+
 def main():
     while True:
         os.system('cls')
@@ -26,28 +27,21 @@ def main():
             print("Invalid Input")
             continue
 
-
 def play_menu():
-    username = ""
-    
-    # loop until a proper username is inputted
-    while not username:
-        username = get_username(input("Enter username: "))
-        
-        
+    user_name = validate_username(input("Enter username: "))
+
+    while user_name:
+        user_name = validate_username()
     phase_1(user_name)
 
 
-def get_username(username):  
-    os.system('cls')
-    dialogues.header()
-    global user_name
-    
-
-    if re.search(r"[a-zA-Z].[0-9]+"):
-        return "Valid"
+# validates username
+def validate_username(name):
+    if re.search(r"^[a-zA-Z][0-9]+", name):
+        return name
     else:
-        return "Invalid"
+        return False
+        
 
 
 def phase_1(user_name):

@@ -173,4 +173,3 @@ def fight():
 
         if int(stats["Health"]) <= 0 or int(enemy_stats["Health"]) <= 0:
             return win_or_no(), stats
-        

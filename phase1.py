@@ -2,7 +2,7 @@ import os
 import dialogues
 import combat
 
-
+# function to configure calls
 def call(user_name):
     os.system('cls')
     dialogues.header
