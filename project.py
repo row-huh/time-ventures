@@ -31,19 +31,25 @@ def play_menu():
     user_name = validate_username(input("Enter username: "))
 
     while not user_name:
-        print("Username must start with 2 letters")
+        print("Username must start with 2 letters and contain atleast 4 characters")
         user_name = validate_username(input("Enter username: "))
         os.system('cls')
         dialogues.header()
     phase_1(user_name)
+    print("-----> Thank You, " + user_name + " for Playing! ")
+    input('\n\nPress Enter to continue...')
+    dialogues.credits()
 
 
 # validates username
 def validate_username(name):
-    if re.match(r"^[a-zA-Z]{2}.", name):
+    if len(name) < 4:
+        return False
+    elif re.match(r"^[a-zA-Z]{2}.", name):
         return name
     else:
         return False
+    
 
 
 def phase_1(user_name):
@@ -67,13 +73,11 @@ def phase_1(user_name):
             dialogues.big_guy_incoming()
             phase1.first_fight()
             dialogues.end()
-            print("-----> Thank You, " + user_name + " for Playing! ")
-            input('\n\nPress Enter to continue...')
-            dialogues.credits()
             break
         else:
             print("Invalid input")
             continue
+
 
 def credits():
     os.system('cls')
@@ -88,7 +92,6 @@ def credits():
         print(".")
         time.sleep(0.5)
     input("\n\nPress Enter to continue.... ")
-    
 
 
 if __name__ == "__main__":        
