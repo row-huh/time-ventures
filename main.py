@@ -30,18 +30,20 @@ def main():
 def play_menu():
     user_name = validate_username(input("Enter username: "))
 
-    while user_name:
-        user_name = validate_username()
+    while not user_name:
+        print("Username must start with 2 letters")
+        user_name = validate_username(input("Enter username: "))
+        os.system('cls')
+        dialogues.header()
     phase_1(user_name)
 
 
 # validates username
 def validate_username(name):
-    if re.search(r"^[a-zA-Z][0-9]+", name):
+    if re.match(r"^[a-zA-Z]{2}.", name):
         return name
     else:
         return False
-        
 
 
 def phase_1(user_name):
