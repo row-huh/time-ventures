@@ -1,6 +1,8 @@
 import os
 import dialogues
 import phase1
+import time
+import re
 
 def main():
     while True:
@@ -26,18 +28,26 @@ def main():
 
 
 def play_menu():
-    while True:
-        os.system('cls')
-        dialogues.header()
-        global user_name
-        user_name = input("Enter your name: ").title()
-
-        if len(user_name) >= 2:
-            break
-        else:
-            input("Username must contain atleast 2 characters\n\nPress Enter to continue....")
+    username = ""
+    
+    # loop until a proper username is inputted
+    while not username:
+        username = get_username(input("Enter username: "))
+        
+        
     phase_1(user_name)
 
+
+def get_username(username):  
+    os.system('cls')
+    dialogues.header()
+    global user_name
+    
+
+    if re.search(r"[a-zA-Z].[0-9]+"):
+        return "Valid"
+    else:
+        return "Invalid"
 
 
 def phase_1(user_name):
@@ -68,6 +78,21 @@ def phase_1(user_name):
         else:
             print("Invalid input")
             continue
+
+def credits():
+    os.system('cls')
+    dialogues.header()
+    print("CREDITS:")
+    print("_" * 40,"\n")
+    print("Time Venturers")
+    print("Text based adventure rpg")
+    print("Written, Designed and Coded by Roha Pathan")
+    print("Programmed on Python 3.10.9")
+    for _ in range(5):
+        print(".")
+        time.sleep(0.5)
+    input("\n\nPress Enter to continue.... ")
+    
 
 
 if __name__ == "__main__":        

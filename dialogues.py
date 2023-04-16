@@ -1,40 +1,20 @@
 import os
 import time
 
-
+# displayed at the top of the game screen
 def header():
     print('-' * 88)
     print('>>>|  ' + ' '.join("TIME VENTURERS") + '  |<<< ')
     print('-' * 88 + '\n')
- 
 
 
-def credits():
-    os.system('cls')
-    header()
-    print("CREDITS:")
-    print("_" * 40,"\n")
-    print("Time Venturers")
-    print("Text based adventure rpg")
-    print("Written, Designed and Coded by Roha Pathan")
-    print("Programmed on Python 3.10.9")
-    print("January 2023")
-    for _ in range(5):
-        print(".")
-        time.sleep(0.5)
-    input("\n\nPress Enter to continue.... ")
- 
- 
- 
-    
+# function to loop through lists of dialogues
 def loopdialogues(dialogues):
     for dialogue in dialogues:
         os.system('cls')
         header()
         print(dialogue)
         input("\n\nPress Enter to continue....")
-
-
 
 
 def start_dialogues():
