@@ -1,5 +1,5 @@
 # Time Venturers
-Time venturers is a simple text based role playing game which takes place in a futuristic world. You have been summoned int he year 2094 and you must figure out who summoned and why!
+Time Venturers is a simple text-based role-playing game that takes place in a futuristic world. You have been summoned in the year 2094 and you must figure out who summoned you and why!
 
 The game begins with a simple menu:
 ![image](https://github.com/row-huh/time-ventures/assets/74301640/ade077b9-c76a-4ef6-9a6d-e7bf04416563)
@@ -13,14 +13,14 @@ Oh, and we can't forget some fights - can we?
 
 
 ### Youtube
-You can also check out the demo at youtube at this link:
+You can also check out the demo on YouTube at this link:
 https://youtu.be/2ck6IDWG4Kc
 
 ## How to Play
-To play the game, simply run the main.py file in a Python environment. The game will prompt you with different options and scenarios, and you'll need to input your choice to progress through the game. The flow of game depends on the choices you input
+To play the game, simply run the main.py file in a Python environment. The game will prompt you with different options and scenarios, and you'll need to input your choice to progress through the game. The flow of the game depends on the choices you input
 
 ## Requirements
-To run the game, you need to have Python installed on your system. The game was created using Python 3, so make sure you have a compatible version installed. No third party libraries or API's were used in this project so it should be able to run completely fine on its own with python only
+To run the game, you need to have Python installed on your system. The game was created using Python 3, so make sure you have a compatible version installed. No third-party libraries or APIs were used in this project so it should be able to run completely fine on its own with python only
 
 ## File Structure
 The game consists of the following files:
@@ -32,7 +32,7 @@ phase1.py: This file is responsible for manipulating the game based on the choic
 
 
 ## Contributing
-Feel free to contribute to the game by adding new features or fixing bugs. Nothing will make me more happier than other people contributing to this project and helping in making it better. You can fork the repository and make your changes, then submit a pull request for review. Please make sure to follow the existing code style and write clear and concise commit messages. 
+Feel free to contribute to the game by adding new features or fixing bugs. Nothing will make me happier than other people contributing to this project and helping to make it better. You can fork the repository and make your changes, then submit a pull request for review. Please make sure to follow the existing code style and write clear and concise commit messages. 
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
