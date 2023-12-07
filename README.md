@@ -25,11 +25,10 @@ To run the game, you need to have Python installed on your system. The game was 
 ## File Structure
 The game consists of the following files:
 
-main.py: This is the main file that runs the game.
-
-dialogues.py: This file contains all the major dialogues and story progression text.
-combat.py: This file handles the combat system of the game.
-phase1.py: This file is responsible for manipulating the game based on the choices the user makes.
+main.py: This is the main file that runs the game.                                         
+dialogues.py: This file contains all the major dialogues and story progression text.                                                                   
+combat.py: This file handles the combat system of the game.                                                                                        
+phase1.py: This file is responsible for manipulating the game based on the choices the user makes.                                                             
 
 
 ## Contributing
